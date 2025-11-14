@@ -1,9 +1,5 @@
 import numpy as np
 
-# -------------------------------
-# Algoritmo: Validação Cruzada k-Fold
-# -------------------------------
-
 def ValidacaoCruzada(dados, k, modelo, metrica, seed=None):
     # 2: Dividir dados em k subconjuntos de tamanhos aproximadamente iguais
     n = len(dados[0])
@@ -41,11 +37,6 @@ def ValidacaoCruzada(dados, k, modelo, metrica, seed=None):
     # 10: retorne Média das métricas de desempenho
     return np.mean(metricas)
 
-
-# -------------------------------
-# Exemplo de uso com Regressão Linear
-# -------------------------------
-
 def modelo_linear(X_train, y_train):
     """Treina regressão linear via pseudo-inversa."""
     X_design = np.hstack([np.ones((X_train.shape[0],1)), X_train])
@@ -60,10 +51,6 @@ def modelo_linear(X_train, y_train):
 def mse(y_true, y_pred):
     return np.mean((y_true - y_pred)**2)
 
-
-# -------------------------------
-# Executando exemplo
-# -------------------------------
 if __name__ == "__main__":
     np.random.seed(0)
     n = 20
